@@ -1,0 +1,27 @@
+<div class="card">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th>Email</th>
+        <th>Grades marked</th>
+          <th>Value</th>
+        <th></th>
+      </tr>
+    </thead>
+    {{#data}}
+      <tr>
+        <td>{{{firstname}}}</td>
+        <td>{{{lastname}}}</td>
+        <td>{{{email}}}</td>
+      <td>{{gradescounts}}</td>
+      <td>${{totalvalue}}</td>
+      <td style="width:20px;"><a href="/local/staffmanager/graderdetail.php?grader={{id}}&month={{month}}&year={{year}}"><i class="fa fa-arrow-circle-right fa-2x"></i></td>
+      </tr>
+    {{/data}}
+  </table>
+  {{^data}}
+  <div class="card-body"><p>There are no results</p></div>
+    {{/data}}
+</div>

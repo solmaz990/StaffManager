@@ -1,0 +1,27 @@
+<div class="card"><div class="card-body"><a href="/local/staffmanager/index.php" class="btn btn-secondary float-right">Staff manager</a> <a href="/local/staffmanager/ratesform.php" class="btn btn-secondary float-right mr-1">New rate</a><br></div></div>
+<div class="card">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Year</th>
+        <th class="text-right">Assignment rate ($/grade)</th>
+        <th class="text-right">Quiz rate ($/grade)</th>
+        <th></th>
+
+      </tr>
+    </thead>
+    {{#data}}
+      <tr>
+        <td>{{{monthname}}}</td>
+        <td>{{{year}}}</td>
+        <td class="text-right">{{{assignmentrate}}}</td>
+      <td class="text-right">{{quizrate}}</td>
+      <td><a href="/local/staffmanager/ratesform.php?id={{id}}"><i class="fa fa-edit"></i></td>
+      </tr>
+    {{/data}}
+  </table>
+  {{^data}}
+  <div class="card-body"><p>There are no results.</p></div>
+    {{/data}}
+</div>

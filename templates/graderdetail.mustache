@@ -1,0 +1,53 @@
+<a href="/local/staffmanager/index.php?year={{year}}&month={{month}}" class="btn btn-secondary mb-1">Back to search</a>
+<div class="card">
+  <div class="card-header">
+    {{#grader}}
+    <h3>{{firstname}} {{lastname}} - {{monthname}} {{year}}</h3>
+    <small>{{email}}</small>
+    <a href="/user/profile.php?id={{id}}" target="_blank" class="badge badge-secondary float-right">Profile</a>
+    {{/grader}}
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date graded</th>
+        <th>Course</th>
+        <th>Student name</th>
+        <th></th>
+          <th></th>
+        <th>Grade item</th>
+        <th>Type</th>
+        <th>Final grade</th>
+        <th>Rate</th>
+        <th>Feedback</th>
+
+      </tr>
+    </thead>
+    {{#data}}
+      <tr>
+        <td>{{datetimemodified}}</td>
+        <td>{{{coursename}}}</td>
+        <td>{{{studentfirstname}}}</td>
+        <td>{{{studentlastname}}} </td>
+        <td><a href="/user/profile.php?id={{studentid}}" target="_blank" class="badge badge-secondary float-right">Profile</a></td>
+        <td>{{gradeitemname}}</td>
+      <td>{{modulename}}</td>
+      <td>{{finalgrade}}</td>
+        <td class="text-right">{{value}}</td>
+      <td>{{{gradefeedback}}}</td>
+      </tr>
+    {{/data}}
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+          <td></td>
+      <td class="text-right">Total:</td>
+      <td class="text-right">${{totalvalue}}</td>
+      <td></td>
+    </td>
+  </table>
+</div>
